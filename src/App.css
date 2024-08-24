@@ -1,5 +1,4 @@
 :root {
-    margin: 0 auto;
     --blue-900: #293855;
     --blue-500: #4265d6;
     --yellow-500: #f2ac20;
@@ -7,15 +6,34 @@
 }
 
 body {
-    font-family: 'Sofia Sans', sans-serif;
+    background-color: var(--blue-900);
+}
+
+.creators-container {
+    display: flex;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .card-container {
+    margin: 1em;
+    box-sizing: border-box;
+    height: 500px;
+    width: 35%;
+    opacity: 0.8;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 300px;
-    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border: 5px solid;
+    border-color: var(--blue-500);
+    padding: 5em;
 }
 
 .name-icons-container {
@@ -30,11 +48,14 @@ body {
 }
 
 .creator-username {
-    color: var(--blue-500);
+    color: var(--yellow-500);
     font-weight: 700;
+    font-size: 3em;
+    outline-color: #293855;
     text-transform: uppercase;
 }
 
 .icons {
     color: var(--green-300);
+    font-size: 2em;
 }

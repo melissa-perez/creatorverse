@@ -1,34 +1,29 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faYoutube,
-    faTwitter,
-    faInstagram,
-} from '@fortawesome/free-brands-svg-icons';
+import { faTwitch } from '@fortawesome/free-brands-svg-icons';
 import { faPencil, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
-function Card() {
+function Card({ creator }) {
     return (
-        <div className="card-container">
+        <div
+            style={{
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), 
+                 rgba(0, 0, 0, 0.45)),
+                 url(${creator.imageURL})`,
+            }}
+            className="card-container"
+        >
             <div className="name-icons-container">
-                <p className="creator-username">The Korean Vegam</p>
+                <p className="creator-username">{creator.name}</p>
                 <div className="icons-container">
                     <FontAwesomeIcon icon={faInfoCircle} className="icons" />
                     <FontAwesomeIcon icon={faPencil} className="icons" />
                 </div>
             </div>
             <div className="icons-container">
-                <FontAwesomeIcon icon={faYoutube} className="icons" />
-                <FontAwesomeIcon icon={faTwitter} className="icons" />
-                <FontAwesomeIcon icon={faInstagram} className="icons" />
+                <FontAwesomeIcon icon={faTwitch} className="icons" />
             </div>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Pellentesque volutpat, magna eu commodo dictum, dolor nulla
-                laoreet felis, eget lobortis arcu nisi vel augue. Fusce eget
-                risus accumsan libero feugiat imperdiet a vel justo. Praesent ut
-                quam turpis. Aliquam vitae magna sed enim mattis faucibus{' '}
-            </p>
+            <p>{creator.description}</p>
         </div>
     );
 }
