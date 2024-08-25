@@ -32,12 +32,10 @@ function App() {
         {
             path: '/',
             element: <ShowCreators creators={creators} />,
-            children: [
-                { path: 'add', element: <AddCreator /> },
-                { path: 'edit', element: <EditCreator /> },
-                { path: 'view', element: <ViewCreator /> },
-            ],
         },
+        { path: 'add', element: <AddCreator /> },
+        { path: 'edit', element: <EditCreator /> },
+        { path: 'view/:id', element: <ViewCreator creators={creators} /> },
     ]);
     return routes;
 }

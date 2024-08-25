@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitch } from '@fortawesome/free-brands-svg-icons';
 import { faPencil, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
@@ -16,7 +17,12 @@ function Card({ creator }) {
             <div className="name-icons-container">
                 <p className="creator-username">{creator.name}</p>
                 <div className="icons-container">
-                    <FontAwesomeIcon icon={faInfoCircle} className="icons" />
+                    <Link to={`/view/${creator.id}`}>
+                        <FontAwesomeIcon
+                            icon={faInfoCircle}
+                            className="icons"
+                        />
+                    </Link>
                     <FontAwesomeIcon icon={faPencil} className="icons" />
                 </div>
             </div>
