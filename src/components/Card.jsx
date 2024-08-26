@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitch } from '@fortawesome/free-brands-svg-icons';
-import { faPencil, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { faPencil, faInfoCircle, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function Card({ creator }) {
     return (
@@ -24,6 +24,8 @@ function Card({ creator }) {
                         />
                     </Link>
                     <FontAwesomeIcon icon={faPencil} className="icons" />
+                    <FontAwesomeIcon icon={faTrash} className="icons" />
+
                 </div>
             </div>
             <div className="icons-container">

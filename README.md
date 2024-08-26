@@ -19,7 +19,7 @@ The following **required** functionality is completed:
 - [x] **Each content creator has their own unique URL**
 - [ ] **The user can edit a content creator to change their name, url, or description**
 - [ ] **The user can delete a content creator**
-- [ ] **The user can add a new content creator by entering a name, url, or description and then it is displayed on the homepage**
+- [x] **The user can add a new content creator by entering a name, url, or description and then it is displayed on the homepage**
 
 The following **optional** features are implemented:
 

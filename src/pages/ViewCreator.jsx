@@ -14,10 +14,12 @@ function ViewCreator({ creators }) {
     return (
         <div className="creator-container">
             <div className="creator-information">
-                <img src={creator[0].imageURL} className="img-creator" />
+                {creator[0].imageURL && (
+                    <img src={creator[0].imageURL} className="img-creator" />
+                )}
                 <div>
                     <h1>{creator[0].name}</h1>
-                    <p className='description'>{creator[0].description}</p>
+                    <p className="description">{creator[0].description}</p>
                     <a href={`${creator[0].url}`} target="no_blank">
                         <FontAwesomeIcon icon={faTwitch} className="icons" />
                     </a>
