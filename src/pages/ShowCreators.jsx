@@ -1,7 +1,7 @@
 import Card from '../components/Card';
 import Hero from '../components/Hero';
 
-function ShowCreators({ creators }) {
+function ShowCreators({ creators, onDelete }) {
     if (!creators || creators.length === 0) {
         return <div>Loading...</div>;
     }
@@ -12,7 +12,13 @@ function ShowCreators({ creators }) {
             <div className="creators-container">
                 <div className="cards-container">
                     {creators.map((creator) => {
-                        return <Card key={creator.id} creator={creator} />;
+                        return (
+                            <Card
+                                key={creator.id}
+                                creator={creator}
+                                onDelete={onDelete}
+                            />
+                        );
                     })}
                 </div>
             </div>

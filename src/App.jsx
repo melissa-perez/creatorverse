@@ -9,6 +9,11 @@ import './App.css';
 
 function App() {
     const [creators, setCreators] = useState(null);
+    const handleDelete = (id) => {
+        setCreators((prevCreators) =>
+            prevCreators.filter((creator) => creator.id !== id)
+        );
+    };
     useEffect(() => {
         async function fetchCreatorData() {
             let { data: creators, error } = await supabase
@@ -31,7 +36,9 @@ function App() {
     let routes = useRoutes([
         {
             path: '/',
-            element: <ShowCreators creators={creators} />,
+            element: (
+                <ShowCreators creators={creators} onDelete={handleDelete} />
+            ),
         },
         { path: 'add', element: <AddCreator /> },
         { path: 'edit', element: <EditCreator /> },

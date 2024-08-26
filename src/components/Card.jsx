@@ -2,9 +2,29 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitch } from '@fortawesome/free-brands-svg-icons';
-import { faPencil, faInfoCircle, faTrash } from '@fortawesome/free-solid-svg-icons';
+import {
+    faPencil,
+    faInfoCircle,
+    faTrash,
+} from '@fortawesome/free-solid-svg-icons';
+import { supabase } from '../client';
 
-function Card({ creator }) {
+function Card({ creator, onDelete }) {
+    const handleDelete = async (e) => {
+        e.preventDefault();
+
+        const { error } = await supabase
+            .from('creators')
+            .delete()
+            .eq('id', `${creator.id}`);
+
+        if (error) {
+            console.error('Error deleting data: ', error);
+        } else {
+            console.log('Data successfully deleted.');
+            if (onDelete) onDelete(creator.id);
+        }
+    };
     return (
         <div
             style={{
@@ -24,12 +44,15 @@ function Card({ creator }) {
                         />
                     </Link>
                     <FontAwesomeIcon icon={faPencil} className="icons" />
-                    <FontAwesomeIcon icon={faTrash} className="icons" />
-
+                    <FontAwesomeIcon
+                        icon={faTrash}
+                        className="icons"
+                        onClick={(e) => handleDelete(e)}
+                    />
                 </div>
             </div>
             <div className="icons-container">
-                <a href={`${creator.url}`} target="no_blank">
+                <a href={`${creator.url}`} target="noopener noreferrer">
                     <FontAwesomeIcon icon={faTwitch} className="icons" />
                 </a>
             </div>
