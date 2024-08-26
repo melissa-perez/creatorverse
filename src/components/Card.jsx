@@ -43,7 +43,9 @@ function Card({ creator, onDelete }) {
                             className="icons"
                         />
                     </Link>
-                    <FontAwesomeIcon icon={faPencil} className="icons" />
+                    <Link to={`/edit/${creator.id}`}>
+                        <FontAwesomeIcon icon={faPencil} className="icons" />
+                    </Link>
                     <FontAwesomeIcon
                         icon={faTrash}
                         className="icons"

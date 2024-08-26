@@ -41,49 +41,52 @@ function Form() {
         }
     };
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="twitchName">Name</label>
-            <br />
-            <input
-                type="text"
-                id="twitchName"
-                name="twitchName"
-                value={formData.twitchName}
-                onChange={handleChange}
-            />
-            <br />
-            <label htmlFor="imageURL">Image URL</label>
-            <br />
-            <input
-                type="text"
-                id="imageURL"
-                name="imageURL"
-                value={formData.imageURL}
-                onChange={handleChange}
-            />
-            <br />
-            <label htmlFor="description">Description</label>
-            <br />
-            <textarea
-                id="description"
-                name="description"
-                rows="5"
-                cols="33"
-                value={formData.description}
-                onChange={handleChange}
-            />
-            <br />
-            <label htmlFor="URL">URL</label>
-            <br />
-            <input
-                type="text"
-                id="URL"
-                name="URL"
-                value={formData.URL}
-                onChange={handleChange}
-            />
-            <br />
-            <input type="submit" value="Submit" />
+        <form className="form" onSubmit={handleSubmit}>
+            <fieldset>
+                <legend>Add a creator:</legend>
+                <label htmlFor="twitchName">Name</label>
+                <br />
+                <input
+                    type="text"
+                    id="twitchName"
+                    name="twitchName"
+                    value={formData.twitchName}
+                    onChange={handleChange}
+                />
+                <br />
+                <label htmlFor="imageURL">Image URL</label>
+                <br />
+                <input
+                    type="text"
+                    id="imageURL"
+                    name="imageURL"
+                    value={formData.imageURL}
+                    onChange={handleChange}
+                />
+                <br />
+                <label htmlFor="description">Description</label>
+                <br />
+                <textarea
+                    id="description"
+                    name="description"
+                    rows="5"
+                    cols="33"
+                    value={formData.description}
+                    onChange={handleChange}
+                />
+                <br />
+                <label htmlFor="URL">URL</label>
+                <br />
+                <input
+                    type="text"
+                    id="URL"
+                    name="URL"
+                    value={formData.URL}
+                    onChange={handleChange}
+                />
+                <br />
+                <input type="submit" value="Submit" className="button" />
+            </fieldset>
         </form>
     );
 }

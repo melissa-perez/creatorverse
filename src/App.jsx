@@ -14,6 +14,14 @@ function App() {
             prevCreators.filter((creator) => creator.id !== id)
         );
     };
+
+    const handleEdit = (updatedCreator) => {
+        setCreators((prevCreators) =>
+            prevCreators.map((creator) =>
+                creator.id === updatedCreator.id ? updatedCreator : creator
+            )
+        );
+    };
     useEffect(() => {
         async function fetchCreatorData() {
             let { data: creators, error } = await supabase
@@ -41,7 +49,7 @@ function App() {
             ),
         },
         { path: 'add', element: <AddCreator /> },
-        { path: 'edit', element: <EditCreator /> },
+        { path: 'edit/:id', element: <EditCreator onEdit={handleEdit} /> },
         { path: 'view/:id', element: <ViewCreator creators={creators} /> },
     ]);
     return routes;

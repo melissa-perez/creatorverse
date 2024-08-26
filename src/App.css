@@ -128,17 +128,51 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    align-self: ;
 }
 
 .add-text {
     color: var(--white-500);
     font-size: large;
     margin: 10px;
+    align-self: center;
 }
 
 .hero-add-container {
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+form {
+    width: 50vw;
+}
+form > label {
+    color: var(--purple-300);
+    font-size: 2em;
+}
+
+input,
+textarea {
+    background-color: var(--white-500);
+    border: 2px solid var(--black-300);
+    border-radius: 5px;
+    color: var(--black-500);
+    font-weight: 600;
+    height: 100%;
+    width: 100%;
+}
+
+.button {
+    background-color: var(--black-500);
+    color: var(--white-500);
+    width: 10em;
+    height: 3em;
+    margin-top: 1em;
+    border-radius: 20px;
+    font-size: 1em;
+}
+
+.button:hover {
+    background-color: var(--purple-300);
+    color: var(--black-500);
 }
