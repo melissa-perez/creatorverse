@@ -1,7 +1,7 @@
-import Form from "../components/Form";
+import Form from '../components/Form';
 
-function AddCreator() {
-    return <Form />;
+function AddCreator({ onAdd }) {
+    return <Form onAdd={onAdd} />;
 }
 
 export default AddCreator;

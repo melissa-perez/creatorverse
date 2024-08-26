@@ -1,7 +1,10 @@
 import { supabase } from '../client';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Form() {
+function Form({ onAdd }) {
+    const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         twitchName: '',
         imageURL: '',
@@ -19,25 +22,34 @@ function Form() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const { data, error } = await supabase.from('creators').insert([
-            {
-                name: formData.twitchName,
-                imageURL: formData.imageURL,
-                description: formData.description,
-                url: formData.URL,
-            },
-        ]);
+        console.log('Form data:', formData); // Ensure the data is correct
+
+        const { data, error } = await supabase
+            .from('creators')
+            .insert([
+                {
+                    name: formData.twitchName,
+                    imageURL: formData.imageURL,
+                    description: formData.description,
+                    url: formData.URL,
+                },
+            ])
+            .select('*');
 
         if (error) {
-            console.error('Error inserting data: ', error);
-        } else {
-            console.log('Data successfully inserted: ', data);
+            console.error('Error inserting data:', error);
+        } else if (data) {
+            console.log('Data successfully inserted:', data);
             setFormData({
                 twitchName: '',
                 imageURL: '',
                 description: '',
                 URL: '',
             });
+            onAdd(data[0]);
+            navigate('/');
+        } else {
+            console.error('Data is null after insert.');
         }
     };
     return (

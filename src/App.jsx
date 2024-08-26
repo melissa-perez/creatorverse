@@ -9,6 +9,10 @@ import './App.css';
 
 function App() {
     const [creators, setCreators] = useState(null);
+
+    const handleAdd= (newCreator) => {
+        setCreators((prevCreators) => [...prevCreators, newCreator]);
+    };
     const handleDelete = (id) => {
         setCreators((prevCreators) =>
             prevCreators.filter((creator) => creator.id !== id)
@@ -48,7 +52,7 @@ function App() {
                 <ShowCreators creators={creators} onDelete={handleDelete} />
             ),
         },
-        { path: 'add', element: <AddCreator /> },
+        { path: 'add', element: <AddCreator onAdd={handleAdd} /> },
         { path: 'edit/:id', element: <EditCreator onEdit={handleEdit} /> },
         { path: 'view/:id', element: <ViewCreator creators={creators} /> },
     ]);
