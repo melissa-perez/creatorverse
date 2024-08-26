@@ -35,17 +35,11 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
-![Kapture 2024-08-26 at 01 13 51](https://github.com/user-attachments/assets/edc5a8f1-0280-494e-9160-7591015534e5)
+![Kapture 2024-08-26 at 01 12 22](https://github.com/user-attachments/assets/426af1dd-3151-40d2-8a01-10c6733a5912)
 
-
-<!-- Replace this with whatever GIF tool you used! -->
 
 GIF created with ... 👉🏿 Kap
 
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
 
 ## Notes
 
