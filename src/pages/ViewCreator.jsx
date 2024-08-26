@@ -17,7 +17,7 @@ function ViewCreator({ creators }) {
                 <img src={creator[0].imageURL} className="img-creator" />
                 <div>
                     <h1>{creator[0].name}</h1>
-                    <p>{creator[0].description}</p>
+                    <p className='description'>{creator[0].description}</p>
                     <a href={`${creator[0].url}`} target="no_blank">
                         <FontAwesomeIcon icon={faTwitch} className="icons" />
                     </a>

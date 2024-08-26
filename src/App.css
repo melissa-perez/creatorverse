@@ -1,13 +1,13 @@
 :root {
-    --blue-900: #293855;
-    --blue-500: #4265d6;
-    --yellow-500: #f2ac20;
-    --green-300: #c2e7c9;
+    --green-300: #e8f1ee;
+    --yellow-500: #fbad23;
+    --green-500: #447766;
+    --green-700: #194949;
 }
 
 body {
     font-family: 'Sofia Sans', sans-serif;
-    background-color: var(--blue-900);
+    background-color: var(--green-700);
     margin: 0;
     display: flex;
     justify-content: center;
@@ -59,7 +59,7 @@ body {
     background-size: cover;
     background-position: center;
     border: 5px solid;
-    border-color: var(--blue-500);
+    border-color: var(--yellow-500);
     padding: 5em;
 }
 
@@ -78,7 +78,6 @@ body {
     color: var(--yellow-500);
     font-weight: 900;
     font-size: 2em;
-    outline-color: #293855;
     text-transform: uppercase;
 }
 
@@ -88,9 +87,14 @@ body {
 }
 
 .img-creator {
+    max-width: 100%;
     height: auto;
-    width: 300px;
     border: 5px solid;
-    border-color: var(--blue-500);
-    padding: 5em;
+    border-color: var(--yellow-500);
+    padding: 1em;
+}
+
+.description {
+    font-size: 2em;
+    color: var(--yellow-500);
 }

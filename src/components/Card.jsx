@@ -27,9 +27,11 @@ function Card({ creator }) {
                 </div>
             </div>
             <div className="icons-container">
-                <FontAwesomeIcon icon={faTwitch} className="icons" />
+                <a href={`${creator.url}`} target="no_blank">
+                    <FontAwesomeIcon icon={faTwitch} className="icons" />
+                </a>
             </div>
-            <p>{creator.description}</p>
+            <p className="description">{creator.description}</p>
         </div>
     );
 }

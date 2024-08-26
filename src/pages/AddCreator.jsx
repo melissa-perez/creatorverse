@@ -1,5 +1,7 @@
+import Form from "../components/Form";
+
 function AddCreator() {
-    return null;
+    return <Form />;
 }
 
 export default AddCreator;
